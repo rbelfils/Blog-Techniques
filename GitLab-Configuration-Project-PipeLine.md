@@ -10,6 +10,7 @@ https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
 1) Mettre docker en privilegié
 2) Rajouter les serveurs de DNS pour que Docker in Docker puisse retrouver l'url de GITLab.
 
+config.toml
 ```  [runners.docker]
     tls_verify    = false
     image         = "docker:dind"
