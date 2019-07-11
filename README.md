@@ -3,7 +3,7 @@
 je vais référencer ici tous les petits soucis que je rencontre autans en DEVOPS / DEV.
 
 ## Configuration de GITLAB
-[Link](GitLab-Configuration-Project-PipeLine.md)
+  1. [Configuration d'une RUNNER GITLAB utilisant Docker](GitLab-Configuration-Project-PipeLine.md)
 
 
 
