@@ -1,6 +1,6 @@
-# Bienvenu sur mon blog techniques
+# Bienvenue sur mon blog techniques
 
-je vais référencer ici tous les petits soucis que je rencontre autans en DEVOPS / DEV.
+je vais référencer ici tous les petits soucis que je rencontre autant en DEVOPS / DEV.
 
 ## Configuration de GITLAB
   1. [Configuration d'une RUNNER GITLAB utilisant Docker](GitLab-Configuration-Project-PipeLine.md)
