@@ -6,6 +6,9 @@ Aller dans Project Settings -> Permission ->  Activate Pipeline.
 ## Configuration de son executor gitlab runner
 https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
 
+Mettre en place le partage volume '/cache' pour ne pas redescendre les dépendances tout le temps.
+
+
 ### configuration du fichier config.toml de gitlab Runner
 1) Mettre docker en privilegié
 2) Rajouter les serveurs de DNS pour que Docker in Docker puisse retrouver l'url de GITLab.
