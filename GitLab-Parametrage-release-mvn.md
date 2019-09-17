@@ -10,7 +10,7 @@
   - le footer :  -----END RSA PRIVATE KEY-----
 4. Exemple de script CD/CI :
 
-
+.gitlab-ci.yml
 ```
 image: docker:latest
 
