@@ -30,7 +30,7 @@ Syntax highlighted code block
 1. Generer une clef RSA pub/prive
   https://docs.gitlab.com/ee/ssh/
 2. Rajouter la clef public dans le menu Deploy Key de l'administration
-   https://gitlab.tennaxia.org/admin/deploy_keys
+   https://<HOST>/admin/deploy_keys
 3. Rajouter la clef privée dans une variable.
   * Se connecter au repository et accéder au menu Settings -> CI / CD -> Environment variables et ajouter le contenu de la clef privée surtout avec 
   - le header : -----BEGIN RSA PRIVATE KEY-----
