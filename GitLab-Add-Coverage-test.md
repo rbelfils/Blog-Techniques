@@ -122,5 +122,16 @@ test:
 ....
 ```
 2. Ajout d'un filtre pour capturer la couverture de test lors des pipelines
-Aller dans Settings du projet puis CI / CD puis General et renseigner la zone 'Test Coverage parsing' avec 
+Aller dans 'Settings' du projet puis 'CI / CD' puis 'General pipelines' et renseigner la zone 'Test Coverage parsing' avec 
 ``` Total.*?([0-9]{1,3})% ```
+
+3. Ajouter le badge de coverage test
+Aller dans 'Settings' puis 'General project' puis 'Badges' et renseigner les zones suivantes :
+
+Exemple pour le pipeline :
+Link : https://gitlab.tennaxia.org/%{project_path}/badges/%{default_branch}/pipeline.svg
+Base Url Image: https://gitlab.tennaxia.org/%{project_path}/badges/%{default_branch}/pipeline.svg
+
+Exemple pour le coverage test :
+Link: https://gitlab.tennaxia.org/rbelfils/alertes/badges/jacoco/coverage.svg
+Base Url Image: https://gitlab.tennaxia.org/rbelfils/alertes/badges/jacoco/coverage.svg
