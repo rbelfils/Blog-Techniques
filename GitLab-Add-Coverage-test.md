@@ -87,4 +87,40 @@ Parent Pom
  Les couvertures de test de tous les modules sont réunis dans le dossier suivant :
  ```"<Module Rapport>/target/site/jacoco-aggregate"```
 
+## Mettre en place le badge sous Gitlab CI
+1. extraction de la couverture de test
 
+Voir le site : https://jeankins.blogspot.com/2018/03/jacoco-on-gitlab-for-play-26.html
+
+Cela consite, lors du lancement des tests, d'afficher le rapport HTML sur la console à l'aide de la commande 'cat'.
+
+exemple gitlab-ci.tml:
+```
+image: docker:latest
+
+cache:
+  key: "$CI_PROJECT_NAMESPACE_$CI_PROJECT_NAME"
+  paths:
+    - ${CI_PROJECT_DIR}/.m2
+
+services:
+  - docker:dind
+ ....
+ 
+test:
+  image: maven:3.3-jdk-8-alpine
+  stage: test
+  script:
+    - mvn clean verify
+    - cat alertes-report/target/site/jacoco-aggregate/index.html # Affichage du rapport Jacoco
+  artifacts:
+    reports:
+      junit:
+        - alertes-api/target/failsafe-reports/TEST-*.xml
+        - alertes-service/target/surefire-reports/TEST-*.xml
+        
+....
+```
+2. Ajout d'un filtre pour capturer la couverture de test lors des pipelines
+Aller dans Settings du projet puis CI / CD puis General et renseigner la zone 'Test Coverage parsing' avec 
+``` Total.*?([0-9]{1,3})% ```
