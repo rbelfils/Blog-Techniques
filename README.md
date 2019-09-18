@@ -5,6 +5,7 @@ je vais référencer ici tous les petits soucis que je rencontre autant en DEVOP
 ## Configuration de GITLAB
   1. [Configuration d'une RUNNER GITLAB utilisant Docker](GitLab-Configuration-Project-PipeLine.md)
   2. [Paramétrage d'une release mvn](GitLab-Parametrage-release-mvn.md) 
+  3. [Mettre la couverture de test à l'aide de Jacoco](GitLab-Add-Coverage-test.md)
 
 ## Documentation sur les certificats
 1. [Les certificats Création, Utilisation](https://pki-tutorial.readthedocs.io/en/latest/)
