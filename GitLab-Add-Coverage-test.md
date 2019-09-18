@@ -3,15 +3,15 @@
 C'est une des solutions trouvées qui semble être la plus simple.
 
 Vu sur le site : https://prismoskills.appspot.com/lessons/Maven/Chapter_06_-_Jacoco_report_aggregation.jsp
-
 Projet maven :
-
+```
 Parent Pom
   |
   -- Module 1
   -- Module 2
   -- Module Rapport
-  
+  ```
+
 ## Pom parent
 
 1. Rajouter  la dependance à Jacoco :
