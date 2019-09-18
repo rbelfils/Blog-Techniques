@@ -34,7 +34,14 @@ stages:
 test:
   image: maven:3.3-jdk-8-alpine
   stage: test
-  script: "mvn clean test"
+  script:
+    - mvn clean verify
+    - cat alertes-report/target/site/jacoco-aggregate/index.html
+  artifacts:
+    reports:
+      junit:
+        - alertes-api/target/failsafe-reports/TEST-*.xml
+        - alertes-service/target/surefire-reports/TEST-*.xml
 
 maven-build:
   image: maven:3.3-jdk-8-alpine
