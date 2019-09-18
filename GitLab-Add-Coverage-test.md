@@ -12,10 +12,10 @@ Parent Pom
   -- Module 2
   -- Module Rapport
   
-  
-  ## Pom parent
-  1. Rajouter  la dependance à Jacoco :
-  
+## Pom parent
+
+1. Rajouter  la dependance à Jacoco :
+  ```
     <dependencies>
         <dependency>
             <groupId>org.jacoco</groupId>
@@ -23,9 +23,10 @@ Parent Pom
             <version>0.8.4</version>
         </dependency>
     </dependencies>
-
-  2. Rajouter dans la partie build -> plugins :
-        <plugin>
+```
+2. Rajouter dans la partie build -> plugins :
+   ```
+          <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <executions>
@@ -37,52 +38,53 @@ Parent Pom
                 </execution>
             </executions>
         </plugin>
-            
-   ## Module 1
-        Rien à rajouter
-        
-   ## Module 2
-        Rien à rajouter
-        
-   ## Module Rapport
-   
-    1. Rajouter les dependances des autres projets:
-     <dependencies>
-        <dependency>
-            <groupId>GROUP_ID</groupId>
-            <artifactId>Module1</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>GROUP_ID</groupId>
-            <artifactId>Module2</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
-    
-    2. Rajouter le plugin Jacoco avec le goal 'report-aggregate'
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>report-aggregate</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-      
-    
-   ## Résultat :
-   Les couvertures de test de tous les modules sont réunis dans le dossier suivant :
-   "<Module Rapport>/target/site/jacoco-aggregate"
-   
-   
+   ```      
+## Module 1
+    Rien à rajouter
+
+## Module 2
+    Rien à rajouter
+
+## Module Rapport
+
+1. Rajouter les dependances des autres projets:
+ ```
+ <dependencies>
+      <dependency>
+          <groupId>GROUP_ID</groupId>
+          <artifactId>Module1</artifactId>
+          <version>${project.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>GROUP_ID</groupId>
+          <artifactId>Module2</artifactId>
+          <version>${project.version}</version>
+      </dependency>
+  </dependencies>
+``` 
+2. Rajouter le plugin Jacoco avec le goal 'report-aggregate'
+```
+   <build>
+      <plugins>
+          <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <version>${jacoco-maven-plugin.version}</version>
+              <executions>
+                  <execution>
+                      <id>report-aggregate</id>
+                      <phase>verify</phase>
+                      <goals>
+                          <goal>report-aggregate</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
+  </build>
+```    
+## Résultat :
+ Les couvertures de test de tous les modules sont réunis dans le dossier suivant :
+ "<Module Rapport>/target/site/jacoco-aggregate"
+
+
