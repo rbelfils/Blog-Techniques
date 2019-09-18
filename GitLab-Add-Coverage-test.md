@@ -85,6 +85,6 @@ Parent Pom
 ```    
 ## Résultat :
  Les couvertures de test de tous les modules sont réunis dans le dossier suivant :
- "<Module Rapport>/target/site/jacoco-aggregate"
+ ```"<Module Rapport>/target/site/jacoco-aggregate"```
 
 
