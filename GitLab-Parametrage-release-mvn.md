@@ -52,15 +52,19 @@ maven-release:
   stage: release
   when: manual
   script:
-    - "which ssh-agent || ( apk update && apk upgrade && apk add git && apk add openssh-client)"
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-    - chmod 700 ~/.ssh/id_rsa
-    - eval $(ssh-agent -s)
-    - ssh-add ~/.ssh/id_rsa
-    - git config --global user.email "qa@tennaxia.com" && git config --global user.name "QA"
-    - mvn release:prepare --batch-mode -Dmaven.test.skip=true
-    - mvn release:perform
+      - "which ssh-agent || ( apk update && apk upgrade && apk add git && apk add openssh-client)"
+      - mkdir -p ~/.ssh
+      - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+      - chmod 700 ~/.ssh/id_rsa
+      - eval $(ssh-agent -s)
+      - ssh-add ~/.ssh/id_rsa
+      - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+      - git config --global user.email "qa@tennaxia.com" && git config --global user.name "QA"
+      - git tag -l | xargs git tag -d
+      - git checkout -B "$CI_COMMIT_REF_NAME" # cette partie est obligatoire sinon le plugin maven release plante avec l'erreur  fatal: ref HEAD is not a symbolic ref -> [Help 1]
+      - git fetch --tags
+      - mvn release:clean release:prepare --batch-mode
+      - mvn release:perform
   artifacts:
     paths:
       - "alertes-api/target/*.jar"
