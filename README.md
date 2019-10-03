@@ -7,6 +7,10 @@ je vais référencer ici tous les petits soucis que je rencontre autant en DEVOP
   2. [Paramétrage d'une release mvn](GitLab-Parametrage-release-mvn.md) 
   3. [Mettre la couverture de test à l'aide de Jacoco](GitLab-Add-Coverage-test.md)
 
+## Configuration de Jenkins
+  1. [Configuration d'un pipeline Jenkins] (Jenkins-Configuration-project-pipeline.md)
+
+
 ## Documentation sur les certificats
 1. [Les certificats Création, Utilisation](https://pki-tutorial.readthedocs.io/en/latest/)
 
