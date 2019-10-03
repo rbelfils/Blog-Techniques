@@ -8,7 +8,7 @@ je vais référencer ici tous les petits soucis que je rencontre autant en DEVOP
   3. [Mettre la couverture de test à l'aide de Jacoco](GitLab-Add-Coverage-test.md)
 
 ## Configuration de Jenkins
-  1. [Configuration d'un pipeline Jenkins] (Jenkins-Configuration-project-pipeline.md)
+  1. [Configuration d'un pipeline Jenkins](Jenkins-Configuration-project-pipeline.md)
 
 
 ## Documentation sur les certificats
