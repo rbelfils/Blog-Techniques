@@ -6,6 +6,7 @@ je vais référencer ici tous les petits soucis que je rencontre autant en DEVOP
   1. [Configuration d'une RUNNER GITLAB utilisant Docker](GitLab-Configuration-Project-PipeLine.md)
   2. [Paramétrage d'une release mvn](GitLab-Parametrage-release-mvn.md) 
   3. [Mettre la couverture de test à l'aide de Jacoco](GitLab-Add-Coverage-test.md)
+  4. [Mettre la qualite de code à l'aide de sonar](GITLAB_sonar_on_MR.md)
 
 ## Configuration de Jenkins
   1. [Configuration d'un pipeline Jenkins](Jenkins-Configuration-project-pipeline.md)
